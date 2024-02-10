@@ -12,3 +12,11 @@ When the slope of two points becomes more than 1, it means the line is more vert
         x1, y1 = y1, x1
         x2, y2 = y2, x2
 ```
+
+## Output
+
+### Case 01 :
+![image](https://github.com/SRRayhan066/Line-Drawing-Algorithm/assets/97345000/f3f1d9bf-0312-4859-803a-6d05dd46d540)
+
+### Case 02 :
+![image](https://github.com/SRRayhan066/Line-Drawing-Algorithm/assets/97345000/9c20d5ac-0ef6-4560-98a7-876558d3f2e1)
