@@ -13,6 +13,79 @@ When the slope of two points becomes more than 1, it means the line is more vert
         x2, y2 = y2, x2
 ```
 
+## Code
+
+```
+import matplotlib.pyplot as plt
+
+def draw_line(x1, y1, x2, y2):
+
+    #check that is steep or not
+    is_steep = abs(y2 - y1) > abs(x2 - x1)
+
+    if is_steep:
+        # interchange the values
+        x1, y1 = y1, x1
+        x2, y2 = y2, x2
+    
+
+    points = []
+    dx = abs(x2 - x1)
+    dy = abs(y2 - y1)
+    x, y = x1, y1
+
+    #decision parameters
+    p = 2*dy-dx #base case
+
+    while True:
+        points.append((y, x) if is_steep else (x, y))
+
+        if x == x2 and y == y2:
+            break
+        
+        if p < 0:
+          x = x + 1
+          y = y
+          p = p + 2*dy
+        
+        else:
+          x = x + 1
+          y = y + 1
+          p = p + 2*dy - 2*dx
+
+    return points
+
+#Case 01
+x0, y0 = 1, 1
+x1, y1 = 8, 4
+line_points = draw_line(x0, y0, x1, y1)
+
+
+#draw the line
+x_values, y_values = zip(*line_points)
+plt.plot(x_values, y_values, marker='o')
+plt.title("Bresenham's Line Drawing Algorithm")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid(True)
+plt.show()
+
+#Case 02
+x0, y0 = 1, 1
+x1, y1 = 4, 8
+line_points = draw_line(x0, y0, x1, y1)
+
+#draw the line
+x_values, y_values = zip(*line_points)
+plt.plot(x_values, y_values, marker='o')
+plt.title("Bresenham's Line Drawing Algorithm")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid(True)
+plt.show()
+
+```
+
 ## Output
 
 ### Case 01 :
