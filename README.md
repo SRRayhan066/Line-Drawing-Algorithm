@@ -4,7 +4,7 @@ Bresenham's algorithm is mainly designed for the slope 0<m<1. In this algorithm,
 When the slope of two points becomes more than 1, it means the line is more vertical and needs to adjust to a steeper slope correctly. That's why there needs a little change which is to interchange the value of x and y.
 
 ```
-#check that is steep or not
+    #check that is steep or not
     is_steep = abs(y2 - y1) > abs(x2 - x1)
 
     if is_steep:
